@@ -1,25 +1,3 @@
-﻿//#include <iostream>
-//
-//int main()
-//{
-//    int a, b, wynik = 0;
-//	char znak;
-//
-//	while (std::cin >> znak >> a >> b)
-//	{
-//		if (std::cin.eof()) break;
-//
-//        switch (znak)
-//        {
-//        case '+': wynik = a + b; break;
-//        case '-': wynik = a - b; break;
-//        case '*': wynik = a * b;  break;
-//        case '/': wynik = a / b; break;
-//        case '%': wynik = a % b; break;
-//        }
-//        std::cout << wynik << '\n';
-//	}
-//}
 #include <iostream>
 #include <cstdlib>
 
