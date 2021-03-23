@@ -1,28 +1,41 @@
-﻿#include<iostream>
-using namespace std;
+﻿#include <iostream>
+#include <string>
+
+int znak[256];
+
+void liczenie(std::string napis)
+{
+    for (int i = 0; i < napis.length(); i++)
+    {
+        if (napis[i] != ' ')
+            znak[int(napis[i])]++;
+    }
+}
 
 int main()
 {
-    char zdanie[101]; //tablica przechowująca wczytane zdanie
-    int zlicz[123] = {}; //wyzerowania tablica przechowująca zliczenia liter
+    int testy;
+    std::string napis;
+    std::cin >> testy;
+    std::cin.ignore();
 
-    cin.getline(zdanie, 123); //wczytanie zdania
-
-    int i = 0; //zmienna do poruszania po komórkach tablicy
-
-    while (zdanie[i]) //lub zdanie[i]!=0
+    for (int i = 0; i < testy; i++)
     {
-        ++zlicz[zdanie[i]]; //zliczanie znaków
-        ++i;
+        getline(std::cin, napis);
+        liczenie(napis);
     }
-
-    for (int i = 97;i < 123;i++) //wypisanie wystąpień małych liter ASCII - 97-122
-        if (zlicz[i] < 0) //lub if(zlicz[i])
-            cout << (char)i << " - " << zlicz[i] << endl;
-
-    for (int i = 65;i < 91;i++) //wypisanie wystąpień dużych liter ASCII - 65-90
-        if (zlicz[i] < 0) //lub if(zlicz[i])
-            cout << (char)i << " - " << zlicz[i] << endl;
-
-    return 0;
+    for (int i = 97; i < 123; i++)
+    {
+        if (znak[i] != 0)
+        {
+            std::cout << char(i) << " " << znak[i] << '\n';
+        }
+    }
+    for (int i = 65; i < 91; i++)
+    {
+        if (znak[i] != 0)
+        {
+            std::cout << char(i) << " " << znak[i] << '\n';
+        }
+    }
 }
